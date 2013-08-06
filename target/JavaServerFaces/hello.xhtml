@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>JSF 2.0 Hello World</title>
+    <h:outputStylesheet library="css" name="table-style.css"/>
+</h:head>
+<h:body>
+	<h3>JSF 2.0 Hello World Example - hello.xhtml</h3>
+	<h:form id="f2">
+		<table>
+		 <tr>
+		   <td>Улица:</td>
+		   <td><p:inputText value="#{order.street}"></p:inputText></td>
+		 </tr>
+		 <tr>
+		   <td>Дом:</td>
+		   <td><p:inputText value="#{order.house}"></p:inputText></td>
+		 </tr>
+		</table>
+		<p:commandButton value="Add" action="#{order.addAction}" update="tableOrder" />
+		
+		<p:dataTable value="#{order.orderList}" 
+				var="o"
+    			id = "tableOrder"
+    		>
+ 
+    		<p:column>
+    			<f:facet name="header">Улица</f:facet>
+    			#{o.street}
+    		</p:column>
+ 
+    		<p:column>
+    			<f:facet name="header">Дом</f:facet>
+    			#{o.house}
+    		</p:column>
+ 
+    		<p:column>
+     			<f:facet name="header">Действие</f:facet>
+     			<p:commandLink value="Delete" action="#{order.deleteAction(o)}" update="@form" ajax="true" />
+    		</p:column>
+ 
+    		</p:dataTable>
+		
+	</h:form>
+</h:body>
+</html>
