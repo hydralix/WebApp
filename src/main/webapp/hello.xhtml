@@ -8,52 +8,78 @@
 
 <h:head>
 	<title>JSF 2.0 Hello World</title>
-    <h:outputStylesheet library="css" name="table-style.css"/>
+
 </h:head>
 <h:body>
 
 	<h:form id="f2">
-
+		<f:facet name="last">
+			<h:outputStylesheet library="default" name="css/table-style.css" />
+		</f:facet>
+	    <h:outputStylesheet library="css" name="css/noBorders.css"/>
 		<p:menubar>
-	        <p:menuitem value="Добавить запись" url="http://www.primefaces.org" icon="ui-icon-document" />
+	        <p:menuitem value="Добавить запись" onclick="dlg.show()"  icon="ui-icon-document" />
 	    </p:menubar>
 
+		<p:dialog id="dialogAdd" header="Добавить запись" widgetVar="dlg" resizable="false" hideEffect="explode">
+		  <p:focus context="dialogAdd"/>   
+			<p:panelGrid columns="2" border="">
+	
+			    <h:outputLabel for="street" value="Улица: " />
+			    <p:inputText id="street" value="#{order.street}" required="true" label="Street"  />
+			
+			    <h:outputLabel for="house" value="Дом: " />
+			    <p:inputText id="house" value="#{order.house}" required="true" label="House"/>
+	
+				<p:commandButton value="Добавить" action="#{order.addAction}" update="f2:tableOrder" style="font-family:Palatino;font-style:italic;font-size: 11pt;"/>	
 
-		<p:panelGrid columns="2">
-		    <f:facet name="header">
-		        Добавить запись
-		    </f:facet>
+			</p:panelGrid>	
+		</p:dialog>
 		
-		    <h:outputLabel for="street" value="Улица: " />
-		    <p:inputText id="street" value="#{order.street}" label="Street" />
-		
-		    <h:outputLabel for="house" value="Дом: " />
-		    <p:inputText id="house" value="#{order.house}" required="true" label="House"/>
-		
-		    <f:facet name="footer">
-		        <p:commandButton type="button" value="Добавить" icon="ui-icon-check" style="margin:0" action="#{order.addAction}" update="tableOrder"/>
-		    </f:facet>
-		</p:panelGrid>		
+		 <p:fieldset id="container" legend="Чат" toggleable="true">
+		     <h:panelGrid columns="2">
+                Name: <p:inputText value="#{messageBean.message.user}"/>
+                Text: <p:inputText value="#{messageBean.message.message}"/>
+                <p:commandButton type="reset" value="Очистить"/>
+                <p:commandButton value="Отправить" actionListener="#{messageBean.sendMessage}"/>
+            </h:panelGrid>
+		 </p:fieldset>   
 		
 		<p:dataTable value="#{order.orderList}" 
 				var="o"
     			id = "tableOrder"
+    			editable="true"
+    			emptyMessage="Нету ни одной записи..."
     		>
+    		
+	       <p:column headerText="Street" style="width:30%" sortBy="#{o.street}">  
+	       	<f:facet name="header">Улица</f:facet>
+	            <p:cellEditor>  
+	                <f:facet name="output">  
+	                    <h:outputText value="#{o.street}"/>  
+	                </f:facet>  
+	                <f:facet name="input">  
+	                    <p:inputText value="#{o.street}" style="width:100%"/>  
+	                </f:facet>  
+	            </p:cellEditor>  
+	        </p:column> 
  
-    		<p:column>
-    			<f:facet name="header">Улица</f:facet>
-    			#{o.street}
-    		</p:column>
- 
-    		<p:column>
-    			<f:facet name="header">Дом</f:facet>
-    			#{o.house}
-    		</p:column>
- 
-    		<p:column>
-     			<f:facet name="header">Действие</f:facet>
-     			<p:commandLink value="Delete" action="#{order.deleteAction(o)}" update="@form" ajax="true" />
-    		</p:column>
+ 	       <p:column headerText="House" style="width:30%" sortBy="#{o.house}">  
+	       	<f:facet name="header">Дом</f:facet>
+	            <p:cellEditor>  
+	                <f:facet name="output">  
+	                    <h:outputText value="#{o.house}" />  
+	                </f:facet>  
+	                <f:facet name="input">  
+	                    <p:inputText value="#{o.house}" style="width:100%"/>  
+	                </f:facet>  
+	            </p:cellEditor>  
+	        </p:column> 
+
+    		<p:column style="width:8%">  
+            	<p:rowEditor />  
+            	<p:commandLink styleClass="ui-icon ui-icon-trash" action="#{order.deleteAction(o)}" update="@form" ajax="true" />
+        	</p:column>  
  
     		</p:dataTable>
 		
