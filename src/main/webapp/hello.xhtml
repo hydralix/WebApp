@@ -4,7 +4,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
+	
 
 <h:head>
 	<title>JSF 2.0 Hello World</title>
@@ -23,7 +25,7 @@
 
 		<p:dialog id="dialogAdd" header="Добавить запись" widgetVar="dlg" resizable="false" hideEffect="explode">
 		  <p:focus context="dialogAdd"/>   
-			<p:panelGrid columns="2" border="">
+			<h:panelGrid columns="2" border="">
 	
 			    <h:outputLabel for="street" value="Улица: " />
 			    <p:inputText id="street" value="#{order.street}" required="true" label="Street"  />
@@ -31,19 +33,10 @@
 			    <h:outputLabel for="house" value="Дом: " />
 			    <p:inputText id="house" value="#{order.house}" required="true" label="House"/>
 	
-				<p:commandButton value="Добавить" action="#{order.addAction}" update="f2:tableOrder" style="font-family:Palatino;font-style:italic;font-size: 11pt;"/>	
+				<p:commandButton value="Добавить" action="#{order.addAction()}" update="f2:tableOrder" style="font-family:Palatino;font-style:italic;font-size: 11pt;"/>	
 
-			</p:panelGrid>	
+			</h:panelGrid>	
 		</p:dialog>
-		
-		 <p:fieldset id="container" legend="Чат" toggleable="true">
-		     <h:panelGrid columns="2">
-                Name: <p:inputText value="#{messageBean.message.user}"/>
-                Text: <p:inputText value="#{messageBean.message.message}"/>
-                <p:commandButton type="reset" value="Очистить"/>
-                <p:commandButton value="Отправить" actionListener="#{messageBean.sendMessage}"/>
-            </h:panelGrid>
-		 </p:fieldset>   
 		
 		<p:dataTable value="#{order.orderList}" 
 				var="o"
