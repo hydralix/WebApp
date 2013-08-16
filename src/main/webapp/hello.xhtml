@@ -28,15 +28,220 @@
 			<h:panelGrid columns="2" border="">
 	
 			    <h:outputLabel for="street" value="Улица: " />
-			    <p:inputText id="street" value="#{order.street}" required="true" label="Street"  />
+			    <p:inputText id="street" value="#{order.street}" label="Street"  />
 			
 			    <h:outputLabel for="house" value="Дом: " />
-			    <p:inputText id="house" value="#{order.house}" required="true" label="House"/>
+			    <p:inputText id="house" value="#{order.house}" label="House"/>
 	
 				<p:commandButton value="Добавить" action="#{order.addAction()}" update="f2:tableOrder" style="font-family:Palatino;font-style:italic;font-size: 11pt;"/>	
 
 			</h:panelGrid>	
 		</p:dialog>
+		
+	<h:commandButton value="Welcome Me" action="#{pageController.helloPage}"></h:commandButton>
+		<br></br>
+		<br></br>
+	
+		<table border="5">
+		   <tr>
+		      <td id="EN">
+		         <table border="5">
+		            <tr>
+		               <td><p:commandButton value=" "  id="EN1"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" oncomplete="dlgNum.show()" actionListener="#{sudoku.someMethod('EN1')}" update="dialogNumber" ajax="true" modal="true"/></td>
+		               <td><p:commandButton value=" "  id="EN2"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="EN3"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		            </tr>
+		            <tr>
+		               <td><p:commandButton value=" "  id="EN4"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="EN5"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="EN6"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		            </tr>
+		            <tr>
+		               <td><p:commandButton value=" "  id="EN7"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="EN8"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="EN9"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		            </tr>
+		         </table>
+		      </td>
+		      <td id="N">
+		         <table border="5">
+		            <tr>
+		               <td><p:commandButton value=" "  id="N1"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="N2"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="N3"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		            </tr>
+		            <tr>
+		               <td><p:commandButton value=" "  id="N4"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="N5"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="N6"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		            </tr>
+		            <tr>
+		               <td><p:commandButton value=" "  id="N7"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="N8"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="N9"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		            </tr>
+		         </table>
+		      </td>
+		      <td id="NW">
+		         <table border="5">
+		            <tr>
+		               <td><p:commandButton value=" "  id="NW1"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="NW2"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="NW3"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		            </tr>
+		            <tr>
+		               <td><p:commandButton value=" "  id="NW4"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="NW5"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="NW6"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		            </tr>
+		            <tr>
+		               <td><p:commandButton value=" "  id="NW7"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="NW8"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="NW9"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		            </tr>
+		         </table>
+		      </td>
+		   </tr>
+		   <tr>
+		      <td id="E">
+		         <table border="5">
+		            <tr>
+		               <td><p:commandButton value=" "  id="E1"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="E2"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="E3"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		            </tr>
+		            <tr>
+		               <td><p:commandButton value=" "  id="E4"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="E5"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="E6"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		            </tr>
+		            <tr>
+		               <td><p:commandButton value=" "  id="E7"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="E8"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="E9"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		            </tr>
+		         </table>
+		      </td>
+		      <td id="C">
+		         <table border="5">
+		            <tr>
+		               <td><p:commandButton value=" "  id="C1"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="C2"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="C3"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		            </tr>
+		            <tr>
+		               <td><p:commandButton value=" "  id="C4"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="C5"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="C6"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		            </tr>
+		            <tr>
+		               <td><p:commandButton value=" "  id="C7"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="C8"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="C9"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		            </tr>
+		         </table>
+		      </td>
+		      <td id="W">
+		         <table border="5">
+		            <tr>
+		               <td><p:commandButton value=" "  id="W1"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="W2"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="W3"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		            </tr>
+		            <tr>
+		               <td><p:commandButton value=" "  id="W4"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="W5"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="W6"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		            </tr>
+		            <tr>
+		               <td><p:commandButton value=" "  id="W7"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="W8"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="W9"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		            </tr>
+		         </table>
+		      </td>
+		   </tr>
+		   <tr>
+		      <td id="ES">
+		         <table border="5">
+		            <tr>
+		               <td><p:commandButton value=" "  id="ES1"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="ES2"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="ES3"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		            </tr>
+		            <tr>
+		               <td><p:commandButton value=" "  id="ES4"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="ES5"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="ES6"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		            </tr>
+		            <tr>
+		               <td><p:commandButton value=" "  id="ES7"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="ES8"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="ES9"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		            </tr>
+		         </table>
+		      </td>
+		      <td id="S">
+		         <table border="5">
+		            <tr>
+		               <td><p:commandButton value=" "  id="S1"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="S2"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="S3"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		            </tr>
+		            <tr>
+		               <td><p:commandButton value=" "  id="S4"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="S5"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="S6"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		            </tr>
+		            <tr>
+		               <td><p:commandButton value=" "  id="S7"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="S8"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="S9"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		            </tr>
+		         </table>
+		      </td>
+		      <td id="SW">
+		         <table border="5">
+		            <tr>
+		               <td><p:commandButton value=" "  id="SW1"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="SW2"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="SW3"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		            </tr>
+		            <tr>
+		               <td><p:commandButton value=" "  id="SW4"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="SW5"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="SW6"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		            </tr>
+		            <tr>
+		               <td><p:commandButton value=" "  id="SW7"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="SW8"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		               <td><p:commandButton value=" "  id="SW9"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" onclick="dlgNum.show()"/></td>
+		            </tr>
+		         </table>
+		      </td>
+		   </tr>
+		</table>
+		
+		<br></br>
+		<br></br>
+		
+		<p:dialog id="dialogNumber" header="Число #{sudoku.idButton}" widgetVar="dlgNum" resizable="false" hideEffect="explode">
+		  <p:focus context="dialogAdd"/>   
+			<h:panelGrid columns="3" border="">
+				<p:commandButton value="1"  id="NUM1"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" />
+				<p:commandButton value="2"  id="NUM2"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" />
+				<p:commandButton value="3"  id="NUM3"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" />
+				<p:commandButton value="4"  id="NUM4"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" />
+				<p:commandButton value="5"  id="NUM5"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" />
+				<p:commandButton value="6"  id="NUM6"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" />
+				<p:commandButton value="7"  id="NUM7"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" />
+				<p:commandButton value="8"  id="NUM8"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" />
+				<p:commandButton value="9"  id="NUM9"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" />
+				<p:commandButton value=" "  id="NUM0"  styleClass="ui-priority-primary" style="height: 40px; width: 40px;" />
+				
+			</h:panelGrid>	
+		</p:dialog>
+		
 		
 		<p:dataTable value="#{order.orderList}" 
 				var="o"
